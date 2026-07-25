@@ -4,6 +4,11 @@
 * [镜像站](<README (1).md>)
 * [中转站](zhong-zhuan-zhan.md)
 
+## 创意与探索
+
+* [迈向 AI 增强型教材](chuang-yi-yu-tan-suo/mai-xiang-ai-zeng-qiang-xing-jiao-cai.md)
+* [Towards an AI-Augmented Textbook](chuang-yi-yu-tan-suo/towards-an-ai-augmented-textbook.md)
+
 ## 技术文档（如无科研需求不必读）
 
 * [说明](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/shuo-ming.md)
