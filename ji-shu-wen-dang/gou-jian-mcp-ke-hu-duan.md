@@ -1,0 +1,979 @@
+# 构建 MCP 客户端
+
+## 构建 MCP 客户端
+
+学习如何构建可与所有 MCP 服务器集成的自有客户端。
+
+> **译者注**：本教程包含大量可运行代码。为保持示例的可复现性，代码中的提示字符串、命令、包名、SDK 类名、输出文本和错误信息保留英文；说明性文字、章节标题、代码注释和 docstring 已译为中文。
+
+在本教程中，你将学习如何构建一个连接到 MCP 服务器的、由 LLM 驱动的聊天机器人客户端。开始之前，建议先阅读我们的构建 MCP 服务器教程，以便理解客户端与服务器之间的通信方式。
+
+本教程提供以下语言版本：
+
+* Python
+* TypeScript
+* Java（部分）
+* Kotlin（原文未获取）
+* C#（原文未获取）
+* Ruby（原文未获取）
+
+[可在此处找到本教程的完整代码。](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/mcp-client-python)
+
+### 系统要求
+
+开始之前，请确保你的系统满足以下要求：
+
+* Mac 或 Windows 电脑
+* 已安装最新版 Python
+* 已安装最新版 `uv`
+
+### 配置环境
+
+首先，使用 `uv` 创建一个新的 Python 项目：
+
+macOS/Linux：
+
+```bash
+# 创建项目目录
+uv init mcp-client
+cd mcp-client
+
+# 创建虚拟环境
+uv venv
+
+# 激活虚拟环境
+source .venv/bin/activate
+
+# 安装所需包
+uv add mcp anthropic python-dotenv
+
+# 删除模板文件
+rm main.py
+
+# 创建主文件
+touch client.py
+```
+
+Windows：
+
+```bash
+# 创建项目目录
+uv init mcp-client
+cd mcp-client
+
+# 创建虚拟环境
+uv venv
+
+# 激活虚拟环境
+.venv\Scripts\activate
+
+# 安装所需包
+uv add mcp anthropic python-dotenv
+
+# 删除模板文件
+rm main.py
+
+# 创建主文件
+touch client.py
+```
+
+### 配置 API 密钥
+
+你需要从 [Anthropic Console](https://console.anthropic.com/settings/keys) 获取 Anthropic API 密钥。创建一个 `.env` 文件来保存它：
+
+```bash
+echo "ANTHROPIC_API_KEY=your-api-key-goes-here" > .env
+```
+
+将 `.env` 加入 `.gitignore`：
+
+```bash
+echo ".env" >> .gitignore
+```
+
+请确保你的 `ANTHROPIC_API_KEY` 安全！
+
+### 创建客户端
+
+#### 导入必要模块
+
+首先，设置导入并创建基本客户端类：
+
+```python
+import asyncio
+from typing import Optional
+from contextlib import AsyncExitStack
+
+from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import stdio_client
+
+from anthropic import Anthropic
+from dotenv import load_dotenv
+
+load_dotenv()  # 从 .env 加载环境变量
+
+class MCPClient:
+    def __init__(self):
+        # 初始化会话和客户端对象
+        self.session: Optional[ClientSession] = None
+        self.exit_stack = AsyncExitStack()
+        self.anthropic = Anthropic()
+    # 方法将放在这里
+```
+
+#### 服务器连接管理
+
+接下来，实现连接到 MCP 服务器的方法：
+
+```python
+    async def connect_to_server(self, server_script_path: str):
+        """连接到 MCP 服务器
+
+        Args:
+            server_script_path: 服务器脚本的路径（.py 或 .js）
+        """
+        is_python = server_script_path.endswith('.py')
+        is_js = server_script_path.endswith('.js')
+        if not (is_python or is_js):
+            raise ValueError("Server script must be a .py or .js file")
+
+        command = "python" if is_python else "node"
+        server_params = StdioServerParameters(
+            command=command,
+            args=[server_script_path],
+            env=None
+        )
+
+        stdio_transport = await self.exit_stack.enter_async_context(stdio_client(server_params))
+        self.stdio, self.write = stdio_transport
+        self.session = await self.exit_stack.enter_async_context(ClientSession(self.stdio, self.write))
+
+        await self.session.initialize()
+
+        # 列出可用工具
+        response = await self.session.list_tools()
+        tools = response.tools
+        print("\nConnected to server with tools:", [tool.name for tool in tools])
+```
+
+#### 查询处理逻辑
+
+现在添加处理查询和工具调用的核心功能：
+
+```python
+    async def process_query(self, query: str) -> str:
+        """使用 Claude 和可用工具处理查询"""
+        messages = [
+            {
+                "role": "user",
+                "content": query
+            }
+        ]
+
+        response = await self.session.list_tools()
+        available_tools = [{
+            "name": tool.name,
+            "description": tool.description,
+            "input_schema": tool.inputSchema
+        } for tool in response.tools]
+
+        # 首次调用 Claude API
+        response = self.anthropic.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=1000,
+            messages=messages,
+            tools=available_tools
+        )
+
+        # 处理响应并处理工具调用
+        final_text = []
+
+        assistant_message_content = []
+        for content in response.content:
+            if content.type == 'text':
+                final_text.append(content.text)
+                assistant_message_content.append(content)
+            elif content.type == 'tool_use':
+                tool_name = content.name
+                tool_args = content.input
+
+                # 执行工具调用
+                result = await self.session.call_tool(tool_name, tool_args)
+                final_text.append(f"[Calling tool {tool_name} with args {tool_args}]")
+
+                assistant_message_content.append(content)
+                messages.append({
+                    "role": "assistant",
+                    "content": assistant_message_content
+                })
+                messages.append({
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": content.id,
+                            "content": result.content
+                        }
+                    ]
+                })
+
+                # 从 Claude 获取下一次响应
+                response = self.anthropic.messages.create(
+                    model="claude-sonnet-4-20250514",
+                    max_tokens=1000,
+                    messages=messages,
+                    tools=available_tools
+                )
+
+                final_text.append(response.content[0].text)
+
+        return "\n".join(final_text)
+```
+
+#### 交互式聊天界面
+
+现在添加聊天循环和清理功能：
+
+```python
+    async def chat_loop(self):
+        """运行交互式聊天循环"""
+        print("\nMCP Client Started!")
+        print("Type your queries or 'quit' to exit.")
+
+        while True:
+            try:
+                query = input("\nQuery: ").strip()
+
+                if query.lower() == 'quit':
+                    break
+
+                response = await self.process_query(query)
+                print("\n" + response)
+
+            except Exception as e:
+                print(f"\nError: {str(e)}")
+
+    async def cleanup(self):
+        """清理资源"""
+        await self.exit_stack.aclose()
+```
+
+#### 主入口
+
+最后，添加主执行逻辑：
+
+```python
+async def main():
+    if len(sys.argv) < 2:
+        print("Usage: python client.py <path_to_server_script>")
+        sys.exit(1)
+
+    client = MCPClient()
+    try:
+        await client.connect_to_server(sys.argv[1])
+        await client.chat_loop()
+    finally:
+        await client.cleanup()
+
+if __name__ == "__main__":
+    import sys
+    asyncio.run(main())
+```
+
+你可以在[这里](https://github.com/modelcontextprotocol/quickstart-resources/blob/main/mcp-client-python/client.py)找到完整的 `client.py` 文件。
+
+### 关键组件解析
+
+#### 1. 客户端初始化
+
+* `MCPClient` 类初始化时会创建会话管理和 API 客户端
+* 使用 `AsyncExitStack` 进行正确的资源管理
+* 配置 Anthropic 客户端以与 Claude 交互
+
+#### 2. 服务器连接
+
+* 支持 Python 和 Node.js 服务器
+* 验证服务器脚本类型
+* 建立正确的通信通道
+* 初始化会话并列出可用工具
+
+#### 3. 查询处理
+
+* 维护对话上下文
+* 处理 Claude 的响应和工具调用
+* 管理 Claude 与工具之间的消息流
+* 将结果组合成连贯的响应
+
+#### 4. 交互式界面
+
+* 提供简单的命令行界面
+* 处理用户输入并显示响应
+* 包含基本的错误处理
+* 允许优雅退出
+
+#### 5. 资源管理
+
+* 正确清理资源
+* 处理连接问题
+* 优雅的关闭流程
+
+### 常见定制点
+
+1. **工具处理**
+   * 修改 `process_query()` 以处理特定类型的工具
+   * 为工具调用添加自定义错误处理
+   * 实现工具特定的响应格式化
+2. **响应处理**
+   * 自定义工具结果的格式化方式
+   * 添加响应过滤或转换
+   * 实现自定义日志
+3. **用户界面**
+   * 添加 GUI 或 Web 界面
+   * 实现丰富的控制台输出
+   * 添加命令历史或自动补全
+
+### 运行客户端
+
+要使用任何 MCP 服务器运行你的客户端：
+
+```bash
+uv run client.py path/to/server.py # Python 服务器
+uv run client.py path/to/build/index.js # Node 服务器
+```
+
+如果你正在继续[服务器快速入门中的天气教程](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-python)，你的命令可能类似这样：`python client.py .../quickstart-resources/weather-server-python/weather.py`
+
+客户端将：
+
+1. 连接到指定服务器
+2. 列出可用工具
+3. 启动交互式聊天会话，你可以：
+   * 输入查询
+   * 查看工具执行
+   * 获取 Claude 的响应
+
+以下是将客户端连接到服务器快速入门中的天气服务器时的预期效果示例：
+
+![](https://mintcdn.com/mcp/4ZXF1PrDkEaJvXpn/images/client-claude-cli-python.png)
+
+### 工作原理
+
+当你提交查询时：
+
+1. 客户端从服务器获取可用工具列表
+2. 你的查询与工具描述一起发送给 Claude
+3. Claude 决定使用哪些工具（如果有）
+4. 客户端通过服务器执行请求的工具调用
+5. 结果发送回 Claude
+6. Claude 提供自然语言响应
+7. 响应显示给你
+
+### 最佳实践
+
+1. **错误处理**
+   * 始终用 try-catch 块包裹工具调用
+   * 提供有意义的错误信息
+   * 优雅地处理连接问题
+2. **资源管理**
+   * 使用 `AsyncExitStack` 进行正确清理
+   * 用完后关闭连接
+   * 处理服务器断开连接
+3. **安全**
+   * 将 API 密钥安全存储在 `.env` 中
+   * 验证服务器响应
+   * 谨慎对待工具权限
+4. **工具名称**
+   * 工具名称可以根据此处指定的格式进行验证
+   * 如果工具名称符合指定格式，则不应被 MCP 客户端的验证失败
+
+### 故障排除
+
+#### 服务器路径问题
+
+* 仔细检查服务器脚本路径是否正确
+* 如果相对路径不起作用，请使用绝对路径
+* 对于 Windows 用户，请确保在路径中使用正斜杠（/）或转义反斜杠（\）
+* 验证服务器文件扩展名是否正确（Python 用 .py，Node.js 用 .js）
+
+路径使用示例：
+
+```bash
+# 相对路径
+uv run client.py ./server/weather.py
+
+# 绝对路径
+uv run client.py /Users/username/projects/mcp-server/weather.py
+
+# Windows 路径（两种格式都有效）
+uv run client.py C:/projects/mcp-server/weather.py
+uv run client.py C:\\projects\\mcp-server\\weather.py
+```
+
+#### 响应时间
+
+* 首次响应可能需要长达 30 秒才能返回
+* 这是正常的，发生在以下过程中：
+  * 服务器初始化
+  * Claude 处理查询
+  * 工具正在执行
+* 后续响应通常会更快
+* 在此期间不要中断进程
+
+#### 常见错误信息
+
+如果你看到：
+
+* `FileNotFoundError`：检查服务器路径
+* `Connection refused`：确保服务器正在运行且路径正确
+* `Tool execution failed`：验证工具所需的环境变量是否已设置
+* `Timeout error`：考虑增加客户端配置中的超时时间
+
+***
+
+### TypeScript
+
+[可在此处找到本教程的完整代码。](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/mcp-client-typescript)
+
+#### 系统要求
+
+开始之前，请确保你的系统满足以下要求：
+
+* Mac 或 Windows 电脑
+* 已安装 Node.js 17 或更高版本
+* 已安装最新版 `npm`
+* Anthropic API 密钥（Claude）
+
+#### 配置环境
+
+首先，创建并设置我们的项目：
+
+macOS/Linux：
+
+```bash
+# 创建项目目录
+mkdir mcp-client-typescript
+cd mcp-client-typescript
+
+# 初始化 npm 项目
+npm init -y
+
+# 安装依赖
+npm install @anthropic-ai/sdk @modelcontextprotocol/sdk dotenv
+
+# 安装开发依赖
+npm install -D @types/node typescript
+
+# 创建源文件
+touch index.ts
+```
+
+Windows：
+
+```bash
+# 创建项目目录
+mkdir mcp-client-typescript
+cd mcp-client-typescript
+
+# 初始化 npm 项目
+npm init -y
+
+# 安装依赖
+npm install @anthropic-ai/sdk @modelcontextprotocol/sdk dotenv
+
+# 安装开发依赖
+npm install -D @types/node typescript
+
+# 创建源文件
+touch index.ts
+```
+
+更新 `package.json` 以设置 `type: "module"` 和构建脚本：
+
+`package.json`：
+
+```json
+{
+  "type": "module",
+  "scripts": {
+    "build": "tsc && chmod 755 build/index.js"
+  }
+}
+```
+
+在项目根目录创建 `tsconfig.json`：
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "outDir": "./build",
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["index.ts"],
+  "exclude": ["node_modules"]
+}
+```
+
+#### 配置 API 密钥
+
+你需要从 [Anthropic Console](https://console.anthropic.com/settings/keys) 获取 Anthropic API 密钥。创建一个 `.env` 文件来保存它：
+
+```bash
+echo "ANTHROPIC_API_KEY=<your key here>" > .env
+```
+
+将 `.env` 加入 `.gitignore`：
+
+```bash
+echo ".env" >> .gitignore
+```
+
+请确保你的 `ANTHROPIC_API_KEY` 安全！
+
+#### 创建客户端
+
+**导入必要模块**
+
+首先，在 `index.ts` 中设置导入并创建基本客户端类：
+
+```typescript
+import { Anthropic } from "@anthropic-ai/sdk";
+import {
+  MessageParam,
+  Tool,
+} from "@anthropic-ai/sdk/resources/messages/messages.mjs";
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+import readline from "readline/promises";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+if (!ANTHROPIC_API_KEY) {
+  throw new Error("ANTHROPIC_API_KEY is not set");
+}
+
+class MCPClient {
+  private mcp: Client;
+  private anthropic: Anthropic;
+  private transport: StdioClientTransport | null = null;
+  private tools: Tool[] = [];
+
+  constructor() {
+    this.anthropic = new Anthropic({
+      apiKey: ANTHROPIC_API_KEY,
+    });
+    this.mcp = new Client({ name: "mcp-client-cli", version: "1.0.0" });
+  }
+  // 方法将放在这里
+}
+```
+
+**服务器连接管理**
+
+接下来，实现连接到 MCP 服务器的方法：
+
+```typescript
+  async connectToServer(serverScriptPath: string) {
+    try {
+      const isJs = serverScriptPath.endsWith(".js");
+      const isPy = serverScriptPath.endsWith(".py");
+      if (!isJs && !isPy) {
+        throw new Error("Server script must be a .js or .py file");
+      }
+      const command = isPy
+        ? process.platform === "win32"
+          ? "python"
+          : "python3"
+        : process.execPath;
+
+      this.transport = new StdioClientTransport({
+        command,
+        args: [serverScriptPath],
+      });
+      await this.mcp.connect(this.transport);
+
+      const toolsResult = await this.mcp.listTools();
+      this.tools = toolsResult.tools.map((tool) => {
+        return {
+          name: tool.name,
+          description: tool.description,
+          input_schema: tool.inputSchema,
+        };
+      });
+      console.log(
+        "Connected to server with tools:",
+        this.tools.map(({ name }) => name)
+      );
+    } catch (e) {
+      console.log("Failed to connect to MCP server: ", e);
+      throw e;
+    }
+  }
+```
+
+**查询处理逻辑**
+
+现在添加处理查询和工具调用的核心功能：
+
+```typescript
+  async processQuery(query: string) {
+    const messages: MessageParam[] = [
+      {
+        role: "user",
+        content: query,
+      },
+    ];
+
+    const response = await this.anthropic.messages.create({
+      model: "claude-sonnet-4-20250514",
+      max_tokens: 1000,
+      messages,
+      tools: this.tools,
+    });
+
+    const finalText = [];
+
+    for (const content of response.content) {
+      if (content.type === "text") {
+        finalText.push(content.text);
+      } else if (content.type === "tool_use") {
+        const toolName = content.name;
+        const toolArgs = content.input as { [x: string]: unknown } | undefined;
+
+        const result = await this.mcp.callTool({
+          name: toolName,
+          arguments: toolArgs,
+        });
+        finalText.push(
+          `[Calling tool ${toolName} with args ${JSON.stringify(toolArgs)}]`
+        );
+
+        messages.push({
+          role: "user",
+          content: result.content as string,
+        });
+
+        const response = await this.anthropic.messages.create({
+          model: "claude-sonnet-4-20250514",
+          max_tokens: 1000,
+          messages,
+        });
+
+        finalText.push(
+          response.content[0].type === "text" ? response.content[0].text : ""
+        );
+      }
+    }
+
+    return finalText.join("\n");
+  }
+```
+
+**交互式聊天界面**
+
+现在添加聊天循环和清理功能：
+
+```typescript
+  async chatLoop() {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
+
+    try {
+      console.log("\nMCP Client Started!");
+      console.log("Type your queries or 'quit' to exit.");
+
+      while (true) {
+        const message = await rl.question("\nQuery: ");
+        if (message.toLowerCase() === "quit") {
+          break;
+        }
+        const response = await this.processQuery(message);
+        console.log("\n" + response);
+      }
+    } finally {
+      rl.close();
+    }
+  }
+
+  async cleanup() {
+    await this.mcp.close();
+  }
+```
+
+**主入口**
+
+最后，添加主执行逻辑：
+
+```typescript
+async function main() {
+  if (process.argv.length < 3) {
+    console.log("Usage: node index.ts <path_to_server_script>");
+    return;
+  }
+  const mcpClient = new MCPClient();
+  try {
+    await mcpClient.connectToServer(process.argv[2]);
+    await mcpClient.chatLoop();
+  } catch (e) {
+    console.error("Error:", e);
+    await mcpClient.cleanup();
+    process.exit(1);
+  } finally {
+    await mcpClient.cleanup();
+    process.exit(0);
+  }
+}
+
+main();
+```
+
+#### 运行客户端
+
+要使用任何 MCP 服务器运行你的客户端：
+
+```bash
+# 构建 TypeScript
+npm run build
+
+# 运行客户端
+node build/index.js path/to/server.py # Python 服务器
+node build/index.js path/to/build/index.js # Node 服务器
+```
+
+如果你正在继续[服务器快速入门中的天气教程](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-typescript)，你的命令可能类似这样：`node build/index.js .../quickstart-resources/weather-server-typescript/build/index.js`
+
+**客户端将：**
+
+1. 连接到指定服务器
+2. 列出可用工具
+3. 启动交互式聊天会话，你可以：
+   * 输入查询
+   * 查看工具执行
+   * 获取 Claude 的响应
+
+#### 工作原理
+
+当你提交查询时：
+
+1. 客户端从服务器获取可用工具列表
+2. 你的查询与工具描述一起发送给 Claude
+3. Claude 决定使用哪些工具（如果有）
+4. 客户端通过服务器执行请求的工具调用
+5. 结果发送回 Claude
+6. Claude 提供自然语言响应
+7. 响应显示给你
+
+#### 最佳实践
+
+1. **错误处理**
+   * 使用 TypeScript 的类型系统进行更好的错误检测
+   * 用 try-catch 块包裹工具调用
+   * 提供有意义的错误信息
+   * 优雅地处理连接问题
+2. **安全**
+   * 将 API 密钥安全存储在 `.env` 中
+   * 验证服务器响应
+   * 谨慎对待工具权限
+
+#### 故障排除
+
+**服务器路径问题**
+
+* 仔细检查服务器脚本路径是否正确
+* 如果相对路径不起作用，请使用绝对路径
+* 对于 Windows 用户，请确保在路径中使用正斜杠（/）或转义反斜杠（\）
+* 验证服务器文件扩展名是否正确（Node.js 用 .js，Python 用 .py）
+
+路径使用示例：
+
+```bash
+# 相对路径
+node build/index.js ./server/build/index.js
+
+# 绝对路径
+node build/index.js /Users/username/projects/mcp-server/build/index.js
+
+# Windows 路径（两种格式都有效）
+node build/index.js C:/projects/mcp-server/build/index.js
+node build/index.js C:\\projects\\mcp-server\\build\\index.js
+```
+
+**响应时间**
+
+* 首次响应可能需要长达 30 秒才能返回
+* 这是正常的，发生在以下过程中：
+  * 服务器初始化
+  * Claude 处理查询
+  * 工具正在执行
+* 后续响应通常会更快
+* 在此期间不要中断进程
+
+**常见错误信息**
+
+如果你看到：
+
+* `Error: Cannot find module`：检查构建文件夹并确保 TypeScript 编译成功
+* `Connection refused`：确保服务器正在运行且路径正确
+* `Tool execution failed`：验证工具所需的环境变量是否已设置
+* `ANTHROPIC_API_KEY is not set`：检查 .env 文件和环境变量
+* `TypeError`：确保你为工具参数使用了正确的类型
+* `BadRequestError`：确保你有足够的额度访问 Anthropic API
+
+***
+
+### Java
+
+这是一个基于 Spring AI MCP 自动配置和 boot starters（启动器）的快速入门演示。要了解如何手动创建同步和异步 MCP 客户端，请参阅 [Java SDK Client](https://java.sdk.modelcontextprotocol.io/) 文档。
+
+本示例演示如何构建一个交互式聊天机器人，将 Spring AI 的模型上下文协议（MCP）与 [Brave Search MCP Server](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/brave-search) 结合使用。该应用创建了一个由 Anthropic 的 Claude AI 模型驱动的对话界面，能够通过 Brave Search 执行互联网搜索，从而实现与实时网页数据的自然语言交互。[可在此处找到本教程的完整代码。](https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol/web-search/brave-chatbot)
+
+#### 系统要求
+
+开始之前，请确保你的系统满足以下要求：
+
+* Java 17 或更高版本
+* Maven 3.6+
+* npx 包管理器
+* Anthropic API 密钥（Claude）
+* Brave Search API 密钥
+
+#### 配置环境
+
+1.  安装 npx（Node Package eXecute）：首先，确保安装 [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)，然后运行：
+
+    ```bash
+    npm install -g npx
+    ```
+2.  克隆仓库：
+
+    ```bash
+    git clone https://github.com/spring-projects/spring-ai-examples.git
+    cd model-context-protocol/web-search/brave-chatbot
+    ```
+3.  设置 API 密钥：
+
+    ```bash
+    export ANTHROPIC_API_KEY='your-anthropic-api-key-here'
+    export BRAVE_API_KEY='your-brave-api-key-here'
+    ```
+4.  构建应用：
+
+    ```bash
+    ./mvnw clean install
+    ```
+5.  使用 Maven 运行应用：
+
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+
+请确保你的 `ANTHROPIC_API_KEY` 和 `BRAVE_API_KEY` 安全！
+
+#### 工作原理
+
+该应用通过几个组件将 Spring AI 与 Brave Search MCP 服务器集成：
+
+**MCP 客户端配置**
+
+1.  pom.xml 中的必需依赖：
+
+    ```xml
+    <dependency>
+        <groupId>org.springframework.ai</groupId>
+        <artifactId>spring-ai-starter-mcp-client</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.ai</groupId>
+        <artifactId>spring-ai-starter-model-anthropic</artifactId>
+    </dependency>
+    ```
+2.  应用属性（application.yml）：
+
+    ```yaml
+    spring:
+      ai:
+        mcp:
+          client:
+            enabled: true
+            name: brave-search-client
+            version: 1.0.0
+            type: SYNC
+            request-timeout: 20s
+            stdio:
+              root-change-notification: true
+              servers-configuration: classpath:/mcp-servers-config.json
+            toolcallback:
+              enabled: true
+        anthropic:
+          api-key: ${ANTHROPIC_API_KEY}
+    ```
+
+    这会激活 `spring-ai-starter-mcp-client`，基于提供的服务器配置创建一个或多个 `McpClient`。`spring.ai.mcp.client.toolcallback.enabled=true` 属性启用工具回调机制（tool callback mechanism），自动将所有 MCP 工具注册为 Spring AI 工具。该机制默认禁用。
+3.  MCP 服务器配置（`mcp-servers-config.json`）：
+
+    ```json
+    {
+      "mcpServers": {
+        "brave-search": {
+          "command": "npx",
+          "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+          "env": {
+            "BRAVE_API_KEY": "<PUT YOUR BRAVE API KEY>"
+          }
+        }
+      }
+    }
+    ```
+
+**聊天实现**
+
+聊天机器人使用 Spring AI 的 ChatClient 与 MCP 工具集成实现：
+
+```java
+var chatClient = chatClientBuilder
+    .defaultSystem("You are useful assistant, expert in AI and Java.")
+    .defaultToolCallbacks((Object[]) mcpToolAdapter.toolCallbacks())
+    .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()))
+    .build();
+```
+
+主要特性：
+
+* 使用 Claude AI 模型进行自然语言理解
+* 通过 MCP 集成 Brave Search，实现实时网页搜索能力
+* 使用 InMemoryChatMemory 维护对话记忆
+* 作为交互式命令行应用运行
+
+**构建并运行**
+
+```bash
+./mvnw clean install
+java -jar ./target/ai-mcp-brave-chatbot-0.0.1-SNAPSHOT.jar
+```
+
+或
+
+```bash
+./mvnw spring-boot:run
+```
+
+应用将启动一个交互式聊天会话，你可以在其中提问。当聊天机器人需要从互联网查找信息来回答你的问题时，它会使用 Brave Search。聊天机器人可以：
+
+* 使用内置知识回答问题
+* 在需要时使用网页搜索
+
+***
+
+_注：原始页面还包含 Kotlin、C#、Ruby 等语言标签的后续内容，但在获取到的源内容中已被截断。本翻译涵盖 Python、TypeScript 以及部分 Java 章节。_
+
+_来源：_[_Build an MCP client - Model Context Protocol_](https://modelcontextprotocol.io/docs/develop/build-client#building-mcp-clients)
