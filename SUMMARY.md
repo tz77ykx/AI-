@@ -4,11 +4,6 @@
 * [镜像站](<README (1).md>)
 * [中转站](zhong-zhuan-zhan.md)
 
-## 创意与探索
-
-* [迈向 AI 增强型教材](chuang-yi-yu-tan-suo/mai-xiang-ai-zeng-qiang-xing-jiao-cai.md)
-* [Towards an AI-Augmented Textbook](chuang-yi-yu-tan-suo/towards-an-ai-augmented-textbook.md)
-
 ## 技术文档（如无科研需求不必读）
 
 * [说明](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/shuo-ming.md)
@@ -22,3 +17,10 @@
 * [Introducing the Model Context Protocol](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/introducing-the-model-context-protocol.md)
 * [构建 MCP 客户端](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/gou-jian-mcp-ke-hu-duan.md)
 * [Build an MCP client](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/build-an-mcp-client.md)
+
+## 创意与探索（如无科研需求不必读）
+
+* [迈向 AI 增强型教材](chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du/mai-xiang-ai-zeng-qiang-xing-jiao-cai.md)
+* [Towards an AI-Augmented Textbook](chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du/towards-an-ai-augmented-textbook.md)
+* [一切皆上下文：面向上下文工程的智能体化文件系统抽象](chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du/yi-qie-jie-shang-xia-wen-mian-xiang-shang-xia-wen-gong-cheng-de-zhi-neng-ti-hua-wen-jian-xi-tong-cho.md)
+* [Everything is Context: Agentic File System Abstraction for Context Engineering](chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du/everything-is-context-agentic-file-system-abstraction-for-context-engineering.md)
