@@ -1,4 +1,4 @@
-# Basic workflows
+# Basic Multi-LLM Workflows
 
 Three simple multi-LLM workflow patterns trading cost or latency for improved performance.
 
