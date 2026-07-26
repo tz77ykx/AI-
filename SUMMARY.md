@@ -17,6 +17,8 @@
 * [Introducing the Model Context Protocol](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/introducing-the-model-context-protocol.md)
 * [构建 MCP 客户端](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/gou-jian-mcp-ke-hu-duan.md)
 * [Build an MCP client](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/build-an-mcp-client.md)
+* [系统卡（System Card）：Claude Mythos Preview](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/xi-tong-ka-system-cardclaude-mythos-preview.md)
+* [System Card: Claude Mythos Preview](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/system-card-claude-mythos-preview.md)
 
 ## 创意与探索（如无科研需求不必读）
 
