@@ -10,6 +10,7 @@
 
 * [ChatGPT（Codex）中转站](chatgptcodex-zhong-zhuan-zhan/chatgptcodex-zhong-zhuan-zhan.md)
 * [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng.md)
+* [Codex常用技能与插件](chatgptcodex-zhong-zhuan-zhan/codex-chang-yong-ji-neng-yu-cha-jian.md)
 
 ## 技术文档（如无科研需求不必读）
 
