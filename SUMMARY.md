@@ -9,6 +9,7 @@
 ## ChatGPT（Codex）中转站
 
 * [ChatGPT（Codex）中转站](chatgptcodex-zhong-zhuan-zhan/chatgptcodex-zhong-zhuan-zhan.md)
+* [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng.md)
 
 ## 技术文档（如无科研需求不必读）
 
@@ -32,3 +33,5 @@
 * [Towards an AI-Augmented Textbook](chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du/towards-an-ai-augmented-textbook.md)
 * [一切皆上下文：面向上下文工程的智能体化文件系统抽象](chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du/yi-qie-jie-shang-xia-wen-mian-xiang-shang-xia-wen-gong-cheng-de-zhi-neng-ti-hua-wen-jian-xi-tong-cho.md)
 * [Everything is Context: Agentic File System Abstraction for Context Engineering](chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du/everything-is-context-agentic-file-system-abstraction-for-context-engineering.md)
+
+## Git与Github
