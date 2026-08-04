@@ -14,4 +14,4 @@
 
 <figure><img src="../.gitbook/assets/Codex开始页.png" alt=""><figcaption></figcaption></figure>
 
-<p align="center">图1.3  桌面端ChatGPT的模式切换</p>
+<p align="center">图1.3  桌面端ChatGPT的Codex模式</p>
