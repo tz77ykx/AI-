@@ -1,8 +1,14 @@
 # Table of contents
 
 * [快速开始](README.md)
-* [镜像站](<README (1).md>)
-* [中转站](zhong-zhuan-zhan.md)
+
+## ChatGPT（网页版）镜像站
+
+* [ChatGPT（网页版）镜像站](chatgpt-wang-ye-ban-jing-xiang-zhan/chatgpt-wang-ye-ban-jing-xiang-zhan.md)
+
+## ChatGPT（Codex）中转站
+
+* [ChatGPT（Codex）中转站](chatgptcodex-zhong-zhuan-zhan/chatgptcodex-zhong-zhuan-zhan.md)
 
 ## 技术文档（如无科研需求不必读）
 
