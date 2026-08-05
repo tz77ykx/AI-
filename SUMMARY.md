@@ -18,8 +18,8 @@
 
 ## 模型介绍
 
-* [系统卡（System Card）：Claude Mythos Preview](mo-xing-jie-shao/xi-tong-ka-system-cardclaude-mythos-preview/README.md)
-  * [System Card: Claude Mythos Preview](mo-xing-jie-shao/xi-tong-ka-system-cardclaude-mythos-preview/system-card-claude-mythos-preview.md)
+* [系统卡（System Card）：Claude Mythos Preview](mo-xing-jie-shao/xi-tong-ka-system-cardclaude-mythos-preview.md)
+* [System Card: Claude Mythos Preview](mo-xing-jie-shao/system-card-claude-mythos-preview.md)
 
 ## 智能体
 
