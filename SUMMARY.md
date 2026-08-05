@@ -12,16 +12,16 @@
 * [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng.md)
 * [Codex常用技能与插件](chatgptcodex-zhong-zhuan-zhan/codex-chang-yong-ji-neng-yu-cha-jian.md)
 
-## 技术文档（如无科研需求不必读）
+## AI学习与研究资料（选读） <a href="#ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du" id="ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du"></a>
 
-* [说明](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/shuo-ming.md)
+* [阅读说明](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/shuo-ming.md)
 
 ## 模型介绍
 
 * [系统卡（System Card）：Claude Mythos Preview](mo-xing-jie-shao/xi-tong-ka-system-cardclaude-mythos-preview.md)
 * [System Card: Claude Mythos Preview](mo-xing-jie-shao/system-card-claude-mythos-preview.md)
 
-## 智能体
+## 智能体、工作流与MCP <a href="#zhi-neng-ti" id="zhi-neng-ti"></a>
 
 * [构建智能体实用指南](zhi-neng-ti/gou-jian-zhi-neng-ti-shi-yong-zhi-nan.md)
 * [A practical guide to building agents](zhi-neng-ti/a-practical-guide-to-building-agents.md)
@@ -34,7 +34,7 @@
 * [构建 MCP 客户端](zhi-neng-ti/gou-jian-mcp-ke-hu-duan.md)
 * [Build an MCP client](zhi-neng-ti/build-an-mcp-client.md)
 
-## 创意与探索（如无科研需求不必读）
+## 创意与探索 <a href="#chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du" id="chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du"></a>
 
 * [迈向 AI 增强型教材](chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du/mai-xiang-ai-zeng-qiang-xing-jiao-cai.md)
 * [Towards an AI-Augmented Textbook](chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du/towards-an-ai-augmented-textbook.md)
