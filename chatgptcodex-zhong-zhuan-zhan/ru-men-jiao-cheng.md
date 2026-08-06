@@ -28,10 +28,15 @@
 
 ### 2.1  常规
 
-* [ ] 默认权限打开
-* [ ] 完全访问权限在使用的前1个月不要打开，根据个人实际体验再决定是否打开
-*
+进入 ChatGPT 桌面端设置页，选择左侧的“常规”，其余选项按图设置。
 
+1. 默认权限打开。
+2. 完全访问权限在使用的前 1 个月不要打开；满 1 个月后，再根据个人实际体验决定是否开启。
 
+<figure><img src="../.gitbook/assets/chatgpt-general-settings-1.jpg" alt="ChatGPT常规设置上半部分"><figcaption></figcaption></figure>
 
-'''
+<p align="center">图2.1  ChatGPT常规设置（上半部分）</p>
+
+<figure><img src="../.gitbook/assets/chatgpt-general-settings-2.jpg" alt="ChatGPT常规设置下半部分"><figcaption></figcaption></figure>
+
+<p align="center">图2.2  ChatGPT常规设置（下半部分）</p>
