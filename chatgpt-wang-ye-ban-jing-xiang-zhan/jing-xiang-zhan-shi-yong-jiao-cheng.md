@@ -2,24 +2,27 @@
 
 本教程只介绍通用操作。页面布局、模型名称和入口数量可能调整，请以实际页面为准。
 
-## 一、进入平台并登录
+## 一、注册并登录
 
-1. 使用购买后收到的专属访问方式进入平台；
-2. 按页面提示注册或登录镜像站账号；
-3. 镜像站账号不是官方账号，不要直接提交官方账号密码；
-4. 妥善保存自己的登录信息，避免因忘记账号造成历史记录无法找回。
+1. 打开[主注册入口](https://gpt.ai0.cn/pastel#/register?i=7VFjrj)；
+2. 使用常用的QQ邮箱完成注册；
+3. 注册完成后，将注册所用的QQ邮箱发给我；
+4. 如果主入口临时无法打开，可尝试[备用登录入口](https://gpt.ai1.bar/pastel/#/login)；
+5. 镜像站账号不是官方账号，不要直接提交官方账号密码；
+6. 妥善保存自己的登录信息，避免因忘记账号造成历史记录无法找回；
+7. 只发送注册邮箱，不要发送密码、验证码或其他敏感信息。
 
 ## 二、兑换并激活套餐
 
 登录后，先在完整页面中找到左上角的“兑换码兑换”。
 
-![兑换码兑换入口位置](../.gitbook/assets/jing-xiang-zhan-dui-huan-ma-ru-kou.jpg)
+![兑换码兑换入口位置](https://1747313157-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FfhJ3MQlSexscjstFyuJB%2Fuploads%2Fgit-blob-4d6aa9ad2e854014b49e4e3e17db4e321b1aeed8%2Fjing-xiang-zhan-dui-huan-ma-ru-kou.jpg?alt=media)
 
 1. 点击页面左上角的“兑换码兑换”；
 2. 在弹窗中输入购买后收到的兑换码；
 3. 确认兑换码无误后，点击“立即兑换”，不要连续重复提交。
 
-![输入兑换码并立即兑换](../.gitbook/assets/jing-xiang-zhan-dui-huan-tan-chuang.jpg)
+![输入兑换码并立即兑换](https://1747313157-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FfhJ3MQlSexscjstFyuJB%2Fuploads%2Fgit-blob-8ad0d3d623fc7cf73e7f935126a239432c429b65%2Fjing-xiang-zhan-dui-huan-tan-chuang.jpg?alt=media)
 
 套餐生效规则：兑换后的套餐会立即生效。如果账号中还有尚未使用完的套餐，原套餐会在本次兑换套餐到期后继续使用。
 
@@ -34,7 +37,7 @@ PRO版用户主要有两种使用途径：
 * 方式一：首页中的PRO车队；
 * 方式二：左侧的PRO专用入口。
 
-![PRO车队与PRO专用入口位置](../.gitbook/assets/jing-xiang-zhan-pro-ru-kou.jpg)
+![PRO车队与PRO专用入口位置](https://1747313157-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FfhJ3MQlSexscjstFyuJB%2Fuploads%2Fgit-blob-3755d880dc99019a419d32b9057a696e64535dfc%2Fjing-xiang-zhan-pro-ru-kou.jpg?alt=media)
 
 这两个入口可以互相补充。如果一个入口暂时无法使用，可以返回入口页面尝试另一个PRO入口。
 
