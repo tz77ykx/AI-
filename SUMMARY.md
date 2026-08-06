@@ -5,6 +5,7 @@
 ## ChatGPT（网页版）镜像站
 
 * [镜像站购买说明](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-gou-mai-shuo-ming.md)
+* [镜像站使用教程](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-shi-yong-jiao-cheng.md)
 
 ## ChatGPT（Codex）中转站
 
