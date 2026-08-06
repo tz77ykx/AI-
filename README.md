@@ -6,13 +6,13 @@
 
 适合日常问答、学习辅助、文档整理和普通办公。
 
-[查看 ChatGPT（网页版）镜像站](https://dut-1.gitbook.io/ai-fu-wu-shuo-ming/chatgpt-wang-ye-ban-jing-xiang-zhan/chatgpt-wang-ye-ban-jing-xiang-zhan)
+[查看 ChatGPT（网页版）镜像站](chatgpt-wang-ye-ban-jing-xiang-zhan/README.md)
 
 ### 我想使用 Codex 完成任务
 
 适合编程、文件处理、项目修改、Agent 工作流以及需要在电脑上执行的任务。购买前请先阅读套餐额度和售后范围。
 
-[查看 ChatGPT（Codex）中转站](https://dut-1.gitbook.io/ai-fu-wu-shuo-ming/chatgptcodex-zhong-zhuan-zhan/chatgptcodex-zhong-zhuan-zhan)
+[查看 ChatGPT（Codex）中转站](chatgptcodex-zhong-zhuan-zhan/README.md)
 
 ### 我想阅读 AI 技术资料
 

@@ -1,17 +1,13 @@
 # Table of contents
 
 * [快速开始](README.md)
-
-## ChatGPT（网页版）镜像站
-
-* [镜像站购买说明](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-gou-mai-shuo-ming.md)
-* [镜像站使用教程](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-shi-yong-jiao-cheng.md)
-
-## ChatGPT（Codex）中转站
-
-* [中转站购买说明](chatgptcodex-zhong-zhuan-zhan/zhong-zhuan-zhan-gou-mai-shuo-ming.md)
-* [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng.md)
-* [Codex常用技能与插件](chatgptcodex-zhong-zhuan-zhan/codex-chang-yong-ji-neng-yu-cha-jian.md)
+* [ChatGPT（网页版）镜像站](chatgpt-wang-ye-ban-jing-xiang-zhan/README.md)
+  * [镜像站购买说明](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-gou-mai-shuo-ming.md)
+  * [镜像站使用教程](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-shi-yong-jiao-cheng.md)
+* [ChatGPT（Codex）中转站](chatgptcodex-zhong-zhuan-zhan/README.md)
+  * [中转站购买说明](chatgptcodex-zhong-zhuan-zhan/zhong-zhuan-zhan-gou-mai-shuo-ming.md)
+  * [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng.md)
+  * [Codex常用技能与插件](chatgptcodex-zhong-zhuan-zhan/codex-chang-yong-ji-neng-yu-cha-jian.md)
 
 ## AI学习与研究资料（选读） <a href="#ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du" id="ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du"></a>
 
