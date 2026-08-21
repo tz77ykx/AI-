@@ -11,6 +11,7 @@
   * [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng.md)
   * [Codex常用技能与插件](chatgptcodex-zhong-zhuan-zhan/codex-chang-yong-ji-neng-yu-cha-jian.md)
 * [AI学习指南与资料库（选读）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/README.md)
+  * [ChatGPT 学习模式系统提示词（中文）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/chatgpt-xue-xi-mo-shi-xi-tong-ti-shi-ci-zhong-wen.md)
   * [模型与系统卡](mo-xing-jie-shao/README.md)
     * [Claude Mythos Preview系统卡（中文）](mo-xing-jie-shao/xi-tong-ka-system-cardclaude-mythos-preview.md)
       * [英文原文](mo-xing-jie-shao/system-card-claude-mythos-preview.md)
