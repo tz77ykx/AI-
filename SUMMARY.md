@@ -10,6 +10,7 @@
   * [安装 CC Switch](chatgptcodex-zhong-zhuan-zhan/an-zhuang-cc-switch.md)
   * [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/README.md)
     * [Codex 桌面端「目标」模式：让长任务持续推进](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/codex-zhuo-mian-duan-mu-biao-mo-shi-rang-chang-ren-wu-chi-xu-tui-jin.md)
+    * [把 GitHub 交给 ChatGPT 桌面端（Codex）](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/ba-github-jiao-gei-chatgpt-zhuo-mian-duan-codex.md)
   * [Codex常用技能与插件](chatgptcodex-zhong-zhuan-zhan/codex-chang-yong-ji-neng-yu-cha-jian.md)
 * [AI学习指南与资料库（选读）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/README.md)
   * [ChatGPT 学习模式系统提示词（中文）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/chatgpt-xue-xi-mo-shi-xi-tong-ti-shi-ci-zhong-wen.md)
