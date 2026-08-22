@@ -8,23 +8,25 @@
 
 ### 我只想把 AI 用起来
 
-不需要从底层原理开始学习。先熟悉所用产品的基础操作、模型选择、文件保存和数据安全即可，可以返回[快速开始](../)选择对应的产品教程。
+不需要从底层原理开始学习。先熟悉所用产品的基础操作、模型选择、文件保存和数据安全即可，可以返回快速开始选择对应的产品教程。
 
-### 我想让 AI 引导我学习
+### 我想让 AI 引导我学习或辅助研究
 
-进入[ChatGPT 学习模式系统提示词（中文）](chatgpt-xue-xi-mo-shi-xi-tong-ti-shi-ci-zhong-wen.md)。这份提示词让 AI 通过提问、提示和分步练习引导学习，而不是直接代做作业。
+ChatGPT 学习模式系统提示词（中文）用于分步学习、提问与练习。
 
-### 我想理解模型及其能力边界
+[斯坦福 STORM 方法：如何让 Claude 在几分钟内像博士生一样做研究（中文）](si-tan-fu-storm-fang-fa-ru-he-rang-claude-zai-ji-fen-zhong-nei-xiang-bo-shi-sheng-yi-yang-zuo-yan-ji/)用于多视角检索、矛盾梳理、综合与同行评审式研究。
 
-进入[模型与系统卡](../mo-xing-jie-shao/)。这部分用于了解模型公开资料、能力说明、评测信息和使用边界。
+### 我想理解模型原理及其能力边界
+
+进入模型与系统卡。可以先读[从零开始构建你自己的 LLM：GPT 与 Claude 背后的五阶段流水线（中文）](mo-xing-jie-shao/cong-ling-kai-shi-gou-jian-ni-zi-ji-de-llmgpt-yu-claude-bei-hou-de-wu-jie-duan-liu-shui-xian-zhong-w/)理解构建流程，再通过系统卡了解具体模型的能力说明、评测信息和使用边界。
 
 ### 我想学习 Agent、工作流或 MCP
 
-进入[Agent、工作流与MCP](../zhi-neng-ti/)。建议先理解 Agent 的基本组成，再学习多模型工作流，最后阅读 MCP 的概念和客户端实践。
+进入Agent、工作流与MCP。建议先理解 Agent 的基本组成，再学习多模型工作流和[循环工程](zhi-neng-ti/xun-huan-gong-cheng-cong-ti-shi-ci-xie-shou-dao-xun-huan-she-ji-shi-de-14-bu-lu-xian-tu-zhong-wen/)，最后阅读 MCP 的概念和客户端实践。
 
 ### 我想阅读前沿文章和研究案例
 
-进入[前沿研究与案例](../chuang-yi-yu-tan-suo-ru-wu-ke-yan-xu-qiu-bu-bi-du/)。这些文章用于拓展思路，不属于产品使用的必修内容。
+进入前沿研究与案例。这些文章用于拓展思路，不属于产品使用的必修内容。
 
 ## 阅读方式
 
