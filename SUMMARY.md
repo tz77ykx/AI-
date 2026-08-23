@@ -5,7 +5,7 @@
   * [镜像站购买说明](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-gou-mai-shuo-ming.md)
   * [镜像站使用教程](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-shi-yong-jiao-cheng.md)
 * [ChatGPT（Codex）中转站](chatgptcodex-zhong-zhuan-zhan/README.md)
-  * [中转站购买说明](chatgptcodex-zhong-zhuan-zhan/zhong-zhuan-zhan-gou-mai-shuo-ming.md)
+  * [Codex 中转站套餐选择与购买说明](chatgptcodex-zhong-zhuan-zhan/zhong-zhuan-zhan-gou-mai-shuo-ming.md)
   * [CC Switch 是什么？有什么用？](chatgptcodex-zhong-zhuan-zhan/cc-switch-shi-shen-me-you-shen-me-yong.md)
   * [安装 CC Switch](chatgptcodex-zhong-zhuan-zhan/an-zhuang-cc-switch.md)
   * [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/README.md)
