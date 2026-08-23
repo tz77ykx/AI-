@@ -16,6 +16,7 @@
   * [前端与网站开发](chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/README.md)
     * [先写 DESIGN.md，再写页面：非设计背景的 Codex 前端工作流](chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/xian-xie-design.md-zai-xie-ye-mian-fei-she-ji-bei-jing-de-codex-qian-duan-gong-zuo-liu.md)
     * [看懂一个网页：HTML、CSS、JavaScript 和页面组成](chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/kan-dong-yi-ge-wang-ye-htmlcssjavascript-he-ye-mian-zu-cheng.md)
+    * [网页视觉词典：布局、页面结构、导航与常用组件](chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/wang-ye-shi-jue-ci-dian-bu-ju-ye-mian-jie-gou-dao-hang-yu-chang-yong-zu-jian.md)
   * [Codex常用技能与插件](chatgptcodex-zhong-zhuan-zhan/codex-chang-yong-ji-neng-yu-cha-jian.md)
 * [AI学习指南与资料库（选读）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/README.md)
   * [ChatGPT 学习模式系统提示词（中文）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/chatgpt-xue-xi-mo-shi-xi-tong-ti-shi-ci-zhong-wen.md)
