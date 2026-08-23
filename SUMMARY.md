@@ -8,6 +8,7 @@
   * [Codex 中转站套餐选择与购买说明](chatgptcodex-zhong-zhuan-zhan/zhong-zhuan-zhan-gou-mai-shuo-ming.md)
   * [CC Switch 是什么？有什么用？](chatgptcodex-zhong-zhuan-zhan/cc-switch-shi-shen-me-you-shen-me-yong.md)
   * [安装 CC Switch](chatgptcodex-zhong-zhuan-zhan/an-zhuang-cc-switch.md)
+  * [先登录官方账号，再切换 Codex 中转站](chatgptcodex-zhong-zhuan-zhan/xian-deng-lu-guan-fang-zhang-hao-zai-qie-huan-codex-zhong-zhuan-zhan.md)
   * [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/README.md)
     * [Codex 桌面端「目标」模式：让长任务持续推进](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/codex-zhuo-mian-duan-mu-biao-mo-shi-rang-chang-ren-wu-chi-xu-tui-jin.md)
     * [把 GitHub 交给 ChatGPT 桌面端（Codex）](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/ba-github-jiao-gei-chatgpt-zhuo-mian-duan-codex.md)
