@@ -18,7 +18,7 @@
 
 ### 我想理解模型原理及其能力边界
 
-进入[模型与系统卡](../mo-xing-jie-shao/)。可以先读[从零开始构建你自己的 LLM：GPT 与 Claude 背后的五阶段流水线（中文）](mo-xing-jie-shao/cong-ling-kai-shi-gou-jian-ni-zi-ji-de-llmgpt-yu-claude-bei-hou-de-wu-jie-duan-liu-shui-xian-zhong-w/)理解构建流程，再通过系统卡了解具体模型的能力说明、评测信息和使用边界。
+进入[模型与系统卡](../mo-xing-jie-shao/)。可以先读[从零开始构建你自己的 LLM：GPT 与 Claude 背后的五阶段流水线（中文）](/broken/pages/dUcEVQvKImsgLgmRcKlC)理解构建流程，再通过系统卡了解具体模型的能力说明、评测信息和使用边界。
 
 ### 我想学习 Agent、工作流或 MCP
 
