@@ -12,6 +12,7 @@
   * [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/README.md)
     * [ChatGPT桌面端（Codex）「目标」模式：让长任务持续推进](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/codex-zhuo-mian-duan-mu-biao-mo-shi-rang-chang-ren-wu-chi-xu-tui-jin.md)
     * [GitHub 新手指南：从注册到协作（Codex 辅助版）](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/ba-github-jiao-gei-chatgpt-zhuo-mian-duan-codex.md)
+    * [ChatGPT 网页版 + GPT-5.6 Pro：用 GitHub 仓库做远端开发](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/chatgpt-wang-ye-ban-+-gpt5.6-pro-yong-github-cang-ku-zuo-yuan-duan-kai-fa.md)
   * [Codex常用技能与插件](chatgptcodex-zhong-zhuan-zhan/codex-chang-yong-ji-neng-yu-cha-jian.md)
 * [AI学习指南与资料库（选读）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/README.md)
   * [ChatGPT 学习模式系统提示词（中文）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/chatgpt-xue-xi-mo-shi-xi-tong-ti-shi-ci-zhong-wen.md)
