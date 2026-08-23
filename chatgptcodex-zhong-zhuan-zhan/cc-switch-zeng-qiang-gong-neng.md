@@ -4,7 +4,7 @@ description: >-
   切换到无需路由接管的中转站线路，同时保留官方登录状态并统一后续会话历史。
 ---
 
-# 先登录官方账号，再切换 Codex 中转站
+# CC Switch增强功能
 
 如果你有自己的 ChatGPT/OpenAI 账号，但模型额度由已经购买的 Codex 中转站线路提供，推荐按下面的顺序配置：
 
@@ -18,9 +18,11 @@ description: >-
 | 当前模型请求使用的线路    | CC Switch 中当前启用的 Codex 供应商 |
 | 额度、限额和数据处理规则   | 当前中转站线路的实际规则               |
 
-OpenAI 官方文档说明，Codex 本地客户端支持使用 ChatGPT 账号登录，也支持使用 API Key。本文先通过 ChatGPT 账号建立官方登录状态，再让模型请求使用 CC Switch 中的第三方线路。[OpenAI：Authentication](https://learn.chatgpt.com/docs/auth)
+OpenAI 官方文档说明，Codex 本地客户端支持使用 ChatGPT 账号登录，也支持使用 API Key。本文先通过 ChatGPT 账号建立官方登录状态，再让模型请求使用 CC Switch 中的第三方线路。
 
-CC Switch 的官方攻略把手机远程操作、官方插件等列为依赖官方登录状态的能力示例。实际能否使用，仍取决于账号权限、客户端版本和 OpenAI 当前开放情况；本教程不会把这些能力承诺为中转站套餐的一部分。[CC Switch：保留官方登录攻略](https://github.com/farion1231/cc-switch/blob/main/docs/guides/codex-official-auth-preservation-guide-zh.md)
+[OpenAI：Authentication](https://learn.chatgpt.com/docs/auth)
+
+[CC Switch：保留官方登录攻略](https://github.com/farion1231/cc-switch/blob/main/docs/guides/codex-official-auth-preservation-guide-zh.md)
 
 ## 开始前确认
 
@@ -29,12 +31,9 @@ CC Switch 的官方攻略把手机远程操作、官方插件等列为依赖官�
 * 已经安装并能打开 Codex 桌面端；
 * 已经安装 CC Switch；
 * 已经把购买的 Codex 中转站线路导入 CC Switch；
-* 该线路不需要本地路由，供应商卡片上没有“需要路由”标记；
 * 有一个可以正常登录的 ChatGPT/OpenAI 账号。
 
 如果还没有安装 CC Switch，请先阅读[安装 CC Switch](an-zhuang-cc-switch.md)。如果还不清楚 CC Switch 的作用，请先阅读[CC Switch 是什么？有什么用？](cc-switch-shi-shen-me-you-shen-me-yong.md)。
-
-**本页只适用于无需路由接管的中转站线路。** 请保持 CC Switch 顶部的路由接管开关关闭，也不要在“设置 → 路由”中开启 Codex 接管。如果你的线路显示“需要路由”，应停止使用本页流程，改用对应的路由教程或联系售后确认。
 
 本页截图来自 macOS 上的 CC Switch v3.20.0。Windows 版按相同的菜单名称操作；如果实际界面没有“Codex 应用增强”，请先从 CC Switch 官方渠道更新软件。[CC Switch v3.20.0 发布说明](https://github.com/farion1231/cc-switch/releases/tag/v3.20.0)
 
@@ -175,15 +174,6 @@ _图：两个开关均已开启。本文使用非接管切换，因此第一个�
 先在 CC Switch 中切回 OpenAI Official，重新启动 Codex 并完成一次官方登录；随后完全退出 Codex，再按本文开启两个开关并切回中转站线路。
 
 具体功能是否开放，仍取决于账号权限、客户端版本和 OpenAI 当前状态。本教程只能保留登录状态，不能为账号增加原本没有的权限。
-
-## 安全与隐私
-
-* 不要分享 API Key、Access Token、验证码或账号密码；
-* 不要把 `~/.codex/auth.json`、CC Switch 数据库、导出备份或完整线路配置发送给他人；
-* 不要在截图中展示完整密钥、账号邮箱、线路地址、套餐余额或有效期；
-* 模型请求切到中转站后，输入内容会按照该中转站的服务和数据规则处理；
-* 未公开论文、客户资料、个人隐私和其他敏感内容，应先脱敏再使用；
-* 重要会话和生成文件应由自己另外保存，不要把历史列表当作唯一备份。
 
 ## 事实核查与资料来源
 
