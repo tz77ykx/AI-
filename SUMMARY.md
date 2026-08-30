@@ -9,6 +9,7 @@
   * [CC Switch 是什么？有什么用？](chatgptcodex-zhong-zhuan-zhan/cc-switch-shi-shen-me-you-shen-me-yong.md)
   * [安装 CC Switch](chatgptcodex-zhong-zhuan-zhan/an-zhuang-cc-switch.md)
   * [CC Switch增强功能](chatgptcodex-zhong-zhuan-zhan/cc-switch-zeng-qiang-gong-neng.md)
+  * [AIDUT 中转与 CC Switch 手动配置](chatgptcodex-zhong-zhuan-zhan/aidut-zhong-zhuan-yu-cc-switch-shou-dong-pei-zhi.md)
   * [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/README.md)
     * [ChatGPT桌面端（Codex）「目标」模式：让长任务持续推进](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/codex-zhuo-mian-duan-mu-biao-mo-shi-rang-chang-ren-wu-chi-xu-tui-jin.md)
     * [GitHub 新手指南：从注册到协作（Codex 辅助版）](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/ba-github-jiao-gei-chatgpt-zhuo-mian-duan-codex.md)
