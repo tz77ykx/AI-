@@ -1,6 +1,6 @@
 # Codex 中转站套餐选择与购买说明
 
-<table><thead><tr><th align="right">价格</th><th align="right">有效期</th><th>日限额</th><th width="187" align="right">周限额</th><th align="right">30 天总限额</th></tr></thead><tbody><tr><td align="right">240 元</td><td align="right">开通后 30 天</td><td></td><td align="right">150刀</td><td align="right">600刀</td></tr><tr><td align="right">499 元</td><td align="right">开通后 30 天</td><td></td><td align="right">450刀</td><td align="right">1800刀</td></tr><tr><td align="right">799 元</td><td align="right">开通后 30 天</td><td></td><td align="right">900刀</td><td align="right">3600刀</td></tr></tbody></table>
+<table><thead><tr><th align="center">价格</th><th align="center">有效期</th><th align="center">日限额</th><th width="187" align="center">周限额</th><th align="center">30 天总限额</th></tr></thead><tbody><tr><td align="center">240 元</td><td align="center">开通后 30 天</td><td align="center">30刀</td><td align="center">150刀</td><td align="center">600刀</td></tr><tr><td align="center">499 元</td><td align="center">开通后 30 天</td><td align="center">90刀</td><td align="center">450刀</td><td align="center">1800刀</td></tr><tr><td align="center">799 元</td><td align="center">开通后 30 天</td><td align="center">180刀</td><td align="center">900刀</td><td align="center">3600刀</td></tr><tr><td align="center">1599元</td><td align="center">开通后 30 天</td><td align="center">400刀</td><td align="center">2000刀</td><td align="center">8800刀</td></tr></tbody></table>
 
 ## 包含的服务
 
@@ -9,8 +9,6 @@
 * 套餐有效期内的客户群异步答疑；
 * 额度查询、线路状态和基础配置问题；
 * 因线路配置变更造成的必要调整。
-
-
 
 ## 故障处理
 
@@ -34,8 +32,6 @@
 * 本服务是第三方 AI 接入与部署服务，不是 OpenAI 官方订阅；
 * 已了解所购套餐的额度、有效期和恢复规则；
 * 售后是套餐有效期内的异步支持，不承诺即时响应；
-* 不上传未公开论文、客户资料、账号密码等高度敏感信息；
 * 重要对话、代码和文件由客户自行保存；
-* 套餐到期后，个人问题排查在续费后恢复。
 
 完成购买后，请继续阅读[入门教程](https://dut-1.gitbook.io/ai-fu-wu-shuo-ming/chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng)。

@@ -12,7 +12,7 @@
 
 1. 购买前先阅读[中转站购买说明](zhong-zhuan-zhan-gou-mai-shuo-ming.md)，确认额度限制、有效期和售后范围；
 2. 开通后按照[入门教程](ru-men-jiao-cheng/)完成基础设置和使用；
-3. 熟悉基础操作后，再按需阅读[Codex常用技能与插件](codex-chang-yong-ji-neng-yu-cha-jian.md)。
+3. 熟悉基础操作后，再按需阅读[Codex常用技能与插件](/broken/pages/lZgX4p1DBMWeSRkh53c2)。
 
 ## 使用前注意
 
