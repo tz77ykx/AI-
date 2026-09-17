@@ -1,34 +1,8 @@
 # Codex 中转站套餐选择与购买说明
 
+<table><thead><tr><th align="right">价格</th><th align="right">有效期</th><th>日限额</th><th width="187" align="right">周限额</th><th align="right">30 天总限额</th></tr></thead><tbody><tr><td align="right">240 元</td><td align="right">开通后 30 天</td><td></td><td align="right">150刀</td><td align="right">600刀</td></tr><tr><td align="right">499 元</td><td align="right">开通后 30 天</td><td></td><td align="right">450刀</td><td align="right">1800刀</td></tr><tr><td align="right">799 元</td><td align="right">开通后 30 天</td><td></td><td align="right">900刀</td><td align="right">3600刀</td></tr></tbody></table>
 
-
-## 两种方案对比
-
-| 比较项     | 经济分散型                    | 连续任务型                    |
-| ------- | ------------------------ | ------------------------ |
-| 核心特点    | 入门价格较低，可选择月卡或季卡          | 不设最近 3 小时额度和每日额度，连续使用更灵活 |
-| 主要限制    | 最近 3 小时额度和每日额度同时生效       | 周额度和 30 天总额度同时生效         |
-| 适合的使用方式 | 预算低，每天分散使用，能够接受短时间集中使用受限 | 预算高，连续使用、混合使用            |
-| 不适合的情况  | 连续长时间高消耗使用               | 无                        |
-| 可选有效期   | 30 天或 90 天               | 30 天                     |
-
-两种方案采用不同的额度统计方式，表中的数字不能直接互相换算。下表额度均为第三方平台内部计费单位。
-
-## 经济分散型：价格更低，适合分散使用
-
-本方案适合预算优先、能够把使用分散到一天内的用户。短时间集中使用时，即使每日额度还有剩余，也可能先触发最近 3 小时限额。
-
-本组每档均提供月卡和季卡。季卡按连续 3 个 30 天周期计算，共 90 天；付款时一次性支付，后续周期按月顺延，不会再次自动扣款。
-
-<table><thead><tr><th width="149" align="right">每日额度档位</th><th width="149" align="right">最近 3 小时限额</th><th align="right">30 天价格</th><th align="right">90 天价格</th><th align="right">季卡节省</th></tr></thead><tbody><tr><td align="right">60刀</td><td align="right">20刀</td><td align="right">200 元</td><td align="right">500 元</td><td align="right">100 元</td></tr><tr><td align="right">100刀</td><td align="right">30刀</td><td align="right">300 元</td><td align="right">750 元</td><td align="right">150 元</td></tr><tr><td align="right">200刀</td><td align="right">50刀</td><td align="right">600 元</td><td align="right">1,500 元</td><td align="right">300 元</td></tr></tbody></table>
-
-## 连续任务型：限制更少，适合集中使用
-
-本方案的核心卖点是限制更少，不设最近 3 小时额度和每日额度，更适合集中完成连续任务；相应地，价格相对更高。本组套餐仍有周限额和 30 天总限额（与 OpenAI 官方一致）。该规则自 2026 年 8 月 22 日起生效，适用于新开通及已经开通的套餐。
-
-<table><thead><tr><th align="right">价格</th><th align="right">有效期</th><th width="187" align="right">周限额</th><th align="right">30 天总限额</th></tr></thead><tbody><tr><td align="right">240 元</td><td align="right">开通后 30 天</td><td align="right">150刀</td><td align="right">600刀</td></tr><tr><td align="right">499 元</td><td align="right">开通后 30 天</td><td align="right">450刀</td><td align="right">1800刀</td></tr><tr><td align="right">799 元</td><td align="right">开通后 30 天</td><td align="right">900刀</td><td align="right">3600刀</td></tr></tbody></table>
-
-## 两种方案都包含的服务
+## 包含的服务
 
 * 购买时指定设备的首次安装、线路配置和连通测试；
 * 基础使用教学；
@@ -36,26 +10,7 @@
 * 额度查询、线路状态和基础配置问题；
 * 因线路配置变更造成的必要调整。
 
-## 额度与恢复规则
 
-* 页面中的“额度”是第三方平台内部计费单位，不是现金、可提现美元或 OpenAI 官方 API 余额。
-* 最近 3 小时额度采用滚动窗口，不在固定整点刷新。较早的消费离开窗口后，额度逐步恢复。
-* 第二组套餐仅存在周限额和 30 天总限额；30 天从套餐开通之日起计算，达到任一限额后需要等待对应周期恢复。
-* 达到已经公示的额度限制属于套餐正常规则，不属于线路故障。
-* 剩余额度和预计恢复时间以使用后台的实时显示为准。
-* 上游可能调整可用模型、倍率和额度规则；如有变化，以购买时确认的页面和后续公告为准。
-
-## 不属于套餐售后
-
-* 全天候即时回复或随叫随到的远程控制；
-* 电脑基础操作、系统重装、网络工具以及与本服务无关的软件故障；
-* 代写代码、论文、提示词或完整项目；
-* 对模型回答准确性、项目结果和完成期限的保证；
-* 聊天记录、生成文件或客户本地数据的恢复；
-* 更换设备、重装系统、删除配置或自行修改密钥后的重复部署；
-* 多人共享、转售密钥、异常并发或绕过额度限制。
-
-文档已经覆盖的问题，将优先发送对应文档链接，不重复提供远程演示。超出售后范围的个性化协助需要另行报价。
 
 ## 故障处理
 

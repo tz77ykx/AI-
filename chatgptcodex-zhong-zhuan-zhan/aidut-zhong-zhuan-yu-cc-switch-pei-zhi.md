@@ -2,7 +2,7 @@
 description: AIDUT Codex 中转在 CC Switch 中的手动配置、余额查询与故障恢复说明。
 ---
 
-# AIDUT 中转与 CC Switch 手动配置
+# AIDUT 中转与 CC Switch 配置
 
 本页适用于已经获得 AIDUT（兔子）个人 Key、希望在 CC Switch 中使用 Codex 的用户。配置完成后，CC Switch 负责保存和切换线路，Codex 负责执行任务；默认模型为 `gpt-5.6-sol`，其他可用模型仍可在 Codex 官方模型选择器中自由切换。
 
@@ -72,15 +72,11 @@ API Key 不要写进公开文档、聊天记录或截图；只在客户本机输
 
 默认使用 `gpt-5.6-sol`。在 Codex 官方模型选择器中还可以选择：
 
-| 模型                    | 支持的思考等级                                |
-| --------------------- | -------------------------------------- |
-| `gpt-5.6-sol`         | `low, medium, high, xhigh, max, ultra` |
-| `gpt-5.6-terra`       | `low, medium, high, xhigh, max, ultra` |
-| `gpt-5.6-luna`        | `low, medium, high, xhigh, max`        |
-| `gpt-5.5`             | `low, medium, high, xhigh`             |
-| `gpt-5.4`             | `low, medium, high, xhigh`             |
-| `gpt-5.4-mini`        | `low, medium, high, xhigh`             |
-| `gpt-5.3-codex-spark` | `low, medium, high, xhigh`             |
+| 模型              | 支持的思考等级                                |
+| --------------- | -------------------------------------- |
+| `gpt-5.6-sol`   | `low, medium, high, xhigh, max, ultra` |
+| `gpt-5.6-terra` | `low, medium, high, xhigh, max, ultra` |
+| `gpt-5.6-luna`  | `low, medium, high, xhigh, max`        |
 
 不需要在 CC Switch 中重复创建 7 张卡，也不需要手工维护模型映射。
 
