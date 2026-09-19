@@ -1,16 +1,25 @@
 # 快速开始
 
-这份文档分为服务说明、使用教程和 AI 学习资料。第一次访问时，只需要根据自己的目标选择入口。
+这份文档分为服务说明、使用教程和 AI 学习资料。第一次访问时，先根据使用场景和价格选择入口。
+
+## 服务与起步价格
+
+| 服务 | 适合场景 | 当前起步价格 | 完整价格与说明 |
+| --- | --- | ---: | --- |
+| ChatGPT（网页版）镜像站 | 日常问答、学习辅助、文档整理和普通办公 | 普通版 100 元／30 天；PRO 版 200 元／30 天 | [查看镜像站购买说明](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-gou-mai-shuo-ming.md) |
+| ChatGPT（Codex）中转站 | 编程、文件处理、项目修改和 Agent 工作流 | 240 元／30 天起 | [查看 Codex 中转站购买说明](chatgptcodex-zhong-zhuan-zhan/zhong-zhuan-zhan-gou-mai-shuo-ming.md) |
+
+这里展示的是起步价格。完整档位、额度、有效期、退款和售后范围以付款前对应购买说明为准。
 
 ### 我只想使用 ChatGPT 网页聊天
 
-适合日常问答、学习辅助、文档整理和普通办公。
+适合希望打开网页后直接使用，不需要在电脑上配置 Codex 的用户。
 
 [查看 ChatGPT（网页版）镜像站](chatgpt-wang-ye-ban-jing-xiang-zhan/README.md)
 
 ### 我想使用 Codex 完成任务
 
-适合编程、文件处理、项目修改、Agent 工作流以及需要在电脑上执行的任务。购买前请先阅读套餐额度和售后范围。
+适合需要在电脑上处理编程、文件、项目和可执行任务的用户。
 
 [查看 ChatGPT（Codex）中转站](chatgptcodex-zhong-zhuan-zhan/README.md)
 
