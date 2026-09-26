@@ -14,7 +14,7 @@ description: AIDUT Codex 中转在 CC Switch 中的手动配置、余额查询�
 * 余额显示：`今日`、`本周`、`本月`，每项显示总额、已用、剩余和下次刷新时间
 * 官方登录和 CC Switch 的高级选项保持不变，不需要手工编辑 `auth.json` 或 `config.toml`
 
-## 已有用户：在原有卡片上开通用量显示
+## 已有用户：在原有卡片上开通用量显示 <a href="#existing-quota" id="existing-quota"></a>
 
 已经在使用 AIDUT 中转的用户不需要新建 Provider，也不需要重新粘贴 Key。只编辑当前那张 AIDUT 卡，模型地址、默认模型、官方登录和高级选项保持不变。
 
@@ -41,7 +41,7 @@ description: AIDUT Codex 中转在 CC Switch 中的手动配置、余额查询�
 
 图 2：API Key 和请求地址是可选项；按图留空，填写超时和自动查询间隔，并粘贴正式提取器代码。
 
-## 新建 AIDUT 卡
+## 新建 AIDUT 卡 <a href="#configure" id="configure"></a>
 
 入口：`Codex → 添加新供应商 → Codex 供应商 → 自定义配置`。
 
@@ -68,7 +68,7 @@ API 请求地址：https://api.aidut.cn/codex
 
 API Key 不要写进公开文档、聊天记录或截图；只在客户本机输入。
 
-## 可选择的模型
+## 可选择的模型 <a href="#models" id="models"></a>
 
 默认使用 `gpt-5.6-sol`。在 Codex 官方模型选择器中还可以选择：
 
@@ -80,7 +80,7 @@ API Key 不要写进公开文档、聊天记录或截图；只在客户本机输
 
 不需要在 CC Switch 中重复创建 7 张卡，也不需要手工维护模型映射。
 
-## 高级选项
+## 高级选项 <a href="#advanced" id="advanced"></a>
 
 高级选项不用更新：
 
@@ -89,11 +89,13 @@ API Key 不要写进公开文档、聊天记录或截图；只在客户本机输
 * 不手工填写 `auth.json`、`config.toml` 或 `experimental_bearer_token`；
 * 不额外开启远程压缩、应用通用配置或 1M 上下文窗口。
 
-## 配置余额查询
+## 配置余额查询 <a href="#quota-setup" id="quota-setup"></a>
 
 在 AIDUT 卡片中进入：`配置用量查询 → 启用用量查询 → 自定义`。
 
-提取器代码必须完整粘贴下面的脚本。`{{apiKey}}` 是 CC Switch 的占位符，不能替换成真实 Key。
+展开下方代码块，完整复制提取器脚本。`{{apiKey}}` 是 CC Switch 的占位符，不能替换成真实 Key。
+
+{% code title="完整用量查询脚本" expandable="true" %}
 
 ```javascript
 ({
@@ -249,33 +251,37 @@ API Key 不要写进公开文档、聊天记录或截图；只在客户本机输
 })
 ```
 
+{% endcode %}
+
 脚本只请求 AIDUT 的 `/codex/quota`，并严格生成三张有效卡：`今日`、`本周`、`本月`。单位固定为 `USD`。
 
-## 最终验收
+## 最终验收 <a href="#verify" id="verify"></a>
 
 1. 在 CC Switch 中确认 AIDUT 卡已保存，默认模型为 `gpt-5.6-sol`。
 2. 点击“测试脚本”并保存用量查询配置。
 3. 点击“刷新用量”，确认三张卡都显示总额、已用、剩余和下次刷新时间。
 4. 在 Codex 新建一个不含敏感信息的短测试任务，确认模型请求正常。
 
-## 常见问题
+## 常见问题 <a href="#troubleshooting" id="troubleshooting"></a>
 
-### 模型请求正常，但余额查不到
+### 模型请求正常，但余额查不到 <a href="#quota-error" id="quota-error"></a>
 
 检查用量查询是否开启、类型是否为“自定义”、提取器代码是否完整，以及 `{{apiKey}}` 是否仍保留。API Key 和请求地址留空是正常的；它们是可选输入。
 
-### 返回 401
+### 返回 401 <a href="#error-401" id="error-401"></a>
 
 当前卡中的 AIDUT Key 无效、过期或没有权限。请让客户在本机重新粘贴自己的有效 Key，不要把 Key 发给售后或 AI。
 
-### 返回 404
+### 返回 404 <a href="#error-404" id="error-404"></a>
 
 确认模型请求地址是 `https://api.aidut.cn/codex`，不要把模型请求改成兔子直连地址；余额查询脚本使用的是独立的 `/codex/quota` 地址。
 
-### CC Switch 页面没有“配置用量查询”
+### CC Switch 页面没有“配置用量查询” <a href="#update-switch" id="update-switch"></a>
 
 先备份 CC Switch 数据，再从官方渠道升级到支持该功能的版本。不要为了补余额而新建第二张卡。
 
 ## 安全提醒
 
 个人 Key 等同于密码。只在客户自己的设备上输入；不要把完整 Key 放进 GitBook、群聊、截图、公开仓库或备份文件。遇到 Key 泄露，应立即停用并更换。
+
+继续阅读：[日常使用](ru-men-jiao-cheng/README.md) · [按症状排查](wen-ti-pai-cha.md)

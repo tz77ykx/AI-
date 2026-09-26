@@ -1,24 +1,41 @@
 # Table of contents
 
-* [快速开始](README.md)
-* [ChatGPT（网页版）镜像站](chatgpt-wang-ye-ban-jing-xiang-zhan/README.md)
-  * [镜像站购买说明](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-gou-mai-shuo-ming.md)
-  * [镜像站使用教程](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-shi-yong-jiao-cheng.md)
-* [ChatGPT（Codex）中转站](chatgptcodex-zhong-zhuan-zhan/README.md)
-  * [Codex 中转站套餐选择与购买说明](chatgptcodex-zhong-zhuan-zhan/zhong-zhuan-zhan-gou-mai-shuo-ming.md)
-  * [CC Switch 是什么？有什么用？](chatgptcodex-zhong-zhuan-zhan/cc-switch-shi-shen-me-you-shen-me-yong.md)
-  * [安装 CC Switch](chatgptcodex-zhong-zhuan-zhan/an-zhuang-cc-switch.md)
-  * [CC Switch增强功能](chatgptcodex-zhong-zhuan-zhan/cc-switch-zeng-qiang-gong-neng.md)
-  * [AIDUT 中转与 CC Switch 配置](chatgptcodex-zhong-zhuan-zhan/aidut-zhong-zhuan-yu-cc-switch-pei-zhi.md)
-  * [入门教程](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/README.md)
-    * [ChatGPT桌面端（Codex）「目标」模式：让长任务持续推进](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/codex-zhuo-mian-duan-mu-biao-mo-shi-rang-chang-ren-wu-chi-xu-tui-jin.md)
-    * [GitHub 新手指南：从注册到协作（Codex 辅助版）](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/ba-github-jiao-gei-chatgpt-zhuo-mian-duan-codex.md)
-    * [ChatGPT 网页版 + GPT-5.6 Pro：用 GitHub 仓库做远端开发](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/chatgpt-wang-ye-ban-+-gpt5.6-pro-yong-github-cang-ku-zuo-yuan-duan-kai-fa.md)
+* [开始这里](README.md)
+
+## 购买与开通
+
+* [网页聊天服务](chatgpt-wang-ye-ban-jing-xiang-zhan/README.md)
+  * [网页聊天套餐与购买](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-gou-mai-shuo-ming.md "套餐与购买")
+  * [注册与开通](chatgpt-wang-ye-ban-jing-xiang-zhan/zhu-ce-yu-kai-tong.md)
+  * [镜像站使用教程](chatgpt-wang-ye-ban-jing-xiang-zhan/jing-xiang-zhan-shi-yong-jiao-cheng.md "日常使用")
+  * [网页聊天问题排查](chatgpt-wang-ye-ban-jing-xiang-zhan/wen-ti-pai-cha.md "问题排查")
+* [Codex 电脑任务](chatgptcodex-zhong-zhuan-zhan/README.md)
+  * [Codex 套餐与购买](chatgptcodex-zhong-zhuan-zhan/zhong-zhuan-zhan-gou-mai-shuo-ming.md "套餐与购买")
+  * [安装与开通](chatgptcodex-zhong-zhuan-zhan/an-zhuang-yu-kai-tong.md)
+    * [CC Switch 是什么？有什么用？](chatgptcodex-zhong-zhuan-zhan/cc-switch-shi-shen-me-you-shen-me-yong.md "了解 CC Switch")
+    * [安装 CC Switch](chatgptcodex-zhong-zhuan-zhan/an-zhuang-cc-switch.md)
+    * [AIDUT 中转与 CC Switch 配置](chatgptcodex-zhong-zhuan-zhan/aidut-zhong-zhuan-yu-cc-switch-pei-zhi.md "配置个人线路与用量")
+    * [完成第一个任务](chatgptcodex-zhong-zhuan-zhan/wan-cheng-di-yi-ge-ren-wu.md)
+  * [日常使用与基本设置](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/README.md "日常使用")
+  * [Codex 问题排查](chatgptcodex-zhong-zhuan-zhan/wen-ti-pai-cha.md "问题排查")
+
+## 服务支持
+
+* [常见问题与售后](chang-jian-wen-ti-yu-shou-hou.md)
+
+## 进阶选读
+
+* [实战教程](shi-zhan-jiao-cheng/README.md)
+  * [ChatGPT桌面端（Codex）「目标」模式：让长任务持续推进](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/codex-zhuo-mian-duan-mu-biao-mo-shi-rang-chang-ren-wu-chi-xu-tui-jin.md "长任务与目标模式")
+  * [GitHub 新手指南：从注册到协作（Codex 辅助版）](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/ba-github-jiao-gei-chatgpt-zhuo-mian-duan-codex.md "GitHub 与项目协作")
   * [前端与网站开发](chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/README.md)
     * [先写 DESIGN.md，再写页面：非设计背景的 Codex 前端工作流](chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/xian-xie-design.md-zai-xie-ye-mian-fei-she-ji-bei-jing-de-codex-qian-duan-gong-zuo-liu.md)
     * [看懂一个网页：HTML、CSS、JavaScript 和页面组成](chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/kan-dong-yi-ge-wang-ye-htmlcssjavascript-he-ye-mian-zu-cheng.md)
     * [网页视觉词典：布局、页面结构、导航与常用组件](chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/wang-ye-shi-jue-ci-dian-bu-ju-ye-mian-jie-gou-dao-hang-yu-chang-yong-zu-jian.md)
-* [AI学习指南与资料库（选读）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/README.md)
+  * [进阶配置与工作流](shi-zhan-jiao-cheng/jin-jie-pei-zhi-yu-gong-zuo-liu.md)
+    * [CC Switch增强功能](chatgptcodex-zhong-zhuan-zhan/cc-switch-zeng-qiang-gong-neng.md "保留官方登录与会话历史")
+    * [ChatGPT 网页版 + GPT-5.6 Pro：用 GitHub 仓库做远端开发](chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/chatgpt-wang-ye-ban-+-gpt5.6-pro-yong-github-cang-ku-zuo-yuan-duan-kai-fa.md "官方网页版远端开发")
+* [AI学习指南与资料库（选读）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/README.md "AI 参考资料")
   * [ChatGPT 学习模式系统提示词（中文）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/chatgpt-xue-xi-mo-shi-xi-tong-ti-shi-ci-zhong-wen.md)
   * [斯坦福 STORM 方法：如何让 Claude 在几分钟内像博士生一样做研究（中文）](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/si-tan-fu-storm-fang-fa-ru-he-rang-claude-zai-ji-fen-zhong-nei-xiang-bo-shi-sheng-yi-yang-zuo-yan-ji/README.md)
     * [英文原文](ji-shu-wen-dang-ru-wu-ke-yan-xu-qiu-bu-bi-du/si-tan-fu-storm-fang-fa-ru-he-rang-claude-zai-ji-fen-zhong-nei-xiang-bo-shi-sheng-yi-yang-zuo-yan-ji/ying-wen-yuan-wen.md)

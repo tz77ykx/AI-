@@ -1,4 +1,14 @@
-# 入门教程
+# 日常使用与基本设置
+
+
+已经完成开通的用户，可以从这里调整日常设置。首次使用先读[安装与开通](../an-zhuang-yu-kai-tong.md)，并[完成第一个任务](../wan-cheng-di-yi-ge-ren-wu.md)。
+
+## 常用入口
+
+* [查看剩余额度与恢复时间](../aidut-zhong-zhuan-yu-cc-switch-pei-zhi.md#existing-quota)
+* [查看当前模型选择说明](../aidut-zhong-zhuan-yu-cc-switch-pei-zhi.md#models)
+* [请求失败或用量显示异常](../wen-ti-pai-cha.md)
+* [目标模式、GitHub 与网站开发](../../shi-zhan-jiao-cheng/README.md)
 
 ## 1 这套教程统一使用 Codex
 
@@ -74,3 +84,5 @@ Prompt 经常比普通聊天消息长。如果全部靠键盘输入，会把很�
 * [ ] 轮次完成通知：仅当应用失焦时。
 * [ ] 启用权限通知：打开。
 * [ ] 启用问题通知：打开。
+
+下一步按需要阅读[实战教程](../../shi-zhan-jiao-cheng/README.md)；日常报错先看[问题排查](../wen-ti-pai-cha.md)。

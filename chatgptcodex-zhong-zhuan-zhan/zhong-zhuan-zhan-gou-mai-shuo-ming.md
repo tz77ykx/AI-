@@ -1,6 +1,21 @@
-# Codex 中转站套餐选择与购买说明
+# Codex 套餐与购买
 
-<table><thead><tr><th align="center">价格</th><th align="center">有效期</th><th align="center">日限额</th><th width="187" align="center">周限额</th><th align="center">30 天总限额</th></tr></thead><tbody><tr><td align="center">240 元</td><td align="center">开通后 30 天</td><td align="center">30刀</td><td align="center">150刀</td><td align="center">600刀</td></tr><tr><td align="center">499 元</td><td align="center">开通后 30 天</td><td align="center">90刀</td><td align="center">450刀</td><td align="center">1800刀</td></tr><tr><td align="center">799 元</td><td align="center">开通后 30 天</td><td align="center">180刀</td><td align="center">900刀</td><td align="center">3600刀</td></tr><tr><td align="center">1599元</td><td align="center">开通后 30 天</td><td align="center">400刀</td><td align="center">2000刀</td><td align="center">8800刀</td></tr></tbody></table>
+适合需要在电脑上完成编程、文件处理和项目任务，并希望获得首次安装与基础教学的用户。
+
+## 套餐与价格
+
+<table data-view="cards" data-card-size="large"><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>600 额度档</strong></td><td><p><strong>240 元</strong></p><p>有效期：开通后 30 天</p><p>日限 30 USD<br>周限 150 USD<br>总限 600 USD</p></td></tr>
+<tr><td><strong>1,800 额度档</strong></td><td><p><strong>499 元</strong></p><p>有效期：开通后 30 天</p><p>日限 90 USD<br>周限 450 USD<br>总限 1,800 USD</p></td></tr>
+<tr><td><strong>3,600 额度档</strong></td><td><p><strong>799 元</strong></p><p>有效期：开通后 30 天</p><p>日限 180 USD<br>周限 900 USD<br>总限 3,600 USD</p></td></tr>
+<tr><td><strong>8,800 额度档</strong></td><td><p><strong>1,599 元</strong></p><p>有效期：开通后 30 天</p><p>日限 400 USD<br>周限 2,000 USD<br>总限 8,800 USD</p></td></tr>
+</tbody></table>
+
+## 额度怎么理解 <a href="#quota" id="quota"></a>
+
+USD 是平台显示的计费额度单位；套餐售价以人民币标注。
+
+日限、周限和 30 天总限同时生效。达到其中一项限制时，等待对应窗口恢复，或根据需要升级套餐。当前剩余额度与下一次刷新时间见[用量显示](aidut-zhong-zhuan-yu-cc-switch-pei-zhi.md#existing-quota)。
 
 ## 包含的服务
 
@@ -10,7 +25,14 @@
 * 额度查询、线路状态和基础配置问题；
 * 因线路配置变更造成的必要调整。
 
-## 故障处理
+## 购买与开通步骤
+
+1. 确认套餐额度、有效期、指定设备和下方服务规则。
+2. 完成购买后，按照交付指导取得个人线路信息。
+3. 进入[安装与开通](an-zhuang-yu-kai-tong.md)，确认线路可用。
+4. [完成第一个任务](wan-cheng-di-yi-ge-ren-wu.md)，再开始日常使用。
+
+## 故障处理 <a href="#support" id="support"></a>
 
 * 达到套餐额度：等待对应窗口恢复，或根据需要升级套餐；
 * 客户设备或配置问题：先按照自助排查文档处理；
@@ -34,4 +56,4 @@
 * 售后是套餐有效期内的异步支持，不承诺即时响应；
 * 重要对话、代码和文件由客户自行保存；
 
-完成购买后，请继续阅读[入门教程](https://dut-1.gitbook.io/ai-fu-wu-shuo-ming/chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng)。
+完成购买后，请继续阅读[安装与开通](an-zhuang-yu-kai-tong.md)。
