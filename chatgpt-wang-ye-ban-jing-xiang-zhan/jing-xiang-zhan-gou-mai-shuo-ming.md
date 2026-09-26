@@ -10,13 +10,13 @@
 
 ## 套餐与价格
 
-| 套餐 | 价格 | 有效期 | 24 小时额度标识 |
-| --- | ---: | --- | --- |
-| 普通月卡 | 100 元 | 30 天 | 300/24h |
-| 普通季卡 | 280 元 | 90 天 | 300/24h |
-| 普通年卡 | 1,000 元 | 365 天 | 300/24h |
-| PRO 月卡 | 200 元 | 30 天 | 500/24h |
-| PRO 年卡 | 2,000 元 | 365 天 | 500/24h |
+<table data-view="cards" data-card-size="large"><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>普通月卡</strong></td><td><p><strong>100 元</strong></p><p>有效期：30 天</p><p>24 小时额度标识：300/24h</p></td></tr>
+<tr><td><strong>普通季卡</strong></td><td><p><strong>280 元</strong></p><p>有效期：90 天</p><p>24 小时额度标识：300/24h</p></td></tr>
+<tr><td><strong>普通年卡</strong></td><td><p><strong>1,000 元</strong></p><p>有效期：365 天</p><p>24 小时额度标识：300/24h</p></td></tr>
+<tr><td><strong>PRO 月卡</strong></td><td><p><strong>200 元</strong></p><p>有效期：30 天</p><p>24 小时额度标识：500/24h</p></td></tr>
+<tr><td><strong>PRO 年卡</strong></td><td><p><strong>2,000 元</strong></p><p>有效期：365 天</p><p>24 小时额度标识：500/24h</p></td></tr>
+</tbody></table>
 
 所有套餐均从“ChatGPT 车队”进入；实际开放的服务以套餐页面为准。
 

@@ -4,16 +4,16 @@
 
 ## 套餐与价格
 
-| 套餐 | 价格 | 有效期 | 额度规则 |
-| --- | ---: | --- | --- |
-| 600 额度档 | 240 元 | 开通后 30 天 | 日限 30 USD；周限 150 USD；总限 600 USD |
-| 1,800 额度档 | 499 元 | 开通后 30 天 | 日限 90 USD；周限 450 USD；总限 1,800 USD |
-| 3,600 额度档 | 799 元 | 开通后 30 天 | 日限 180 USD；周限 900 USD；总限 3,600 USD |
-| 8,800 额度档 | 1,599 元 | 开通后 30 天 | 日限 400 USD；周限 2,000 USD；总限 8,800 USD |
+<table data-view="cards" data-card-size="large"><thead><tr><th></th><th></th></tr></thead><tbody>
+<tr><td><strong>600 额度档</strong></td><td><p><strong>240 元</strong></p><p>有效期：开通后 30 天</p><p>日限 30 USD<br>周限 150 USD<br>总限 600 USD</p></td></tr>
+<tr><td><strong>1,800 额度档</strong></td><td><p><strong>499 元</strong></p><p>有效期：开通后 30 天</p><p>日限 90 USD<br>周限 450 USD<br>总限 1,800 USD</p></td></tr>
+<tr><td><strong>3,600 额度档</strong></td><td><p><strong>799 元</strong></p><p>有效期：开通后 30 天</p><p>日限 180 USD<br>周限 900 USD<br>总限 3,600 USD</p></td></tr>
+<tr><td><strong>8,800 额度档</strong></td><td><p><strong>1,599 元</strong></p><p>有效期：开通后 30 天</p><p>日限 400 USD<br>周限 2,000 USD<br>总限 8,800 USD</p></td></tr>
+</tbody></table>
 
 ## 额度怎么理解 <a href="#quota" id="quota"></a>
 
-表中的 USD 是平台显示的计费额度单位；套餐售价以人民币列在“价格”一栏。
+USD 是平台显示的计费额度单位；套餐售价以人民币标注。
 
 日限、周限和 30 天总限同时生效。达到其中一项限制时，等待对应窗口恢复，或根据需要升级套餐。当前剩余额度与下一次刷新时间见[用量显示](aidut-zhong-zhuan-yu-cc-switch-pei-zhi.md#existing-quota)。
 
