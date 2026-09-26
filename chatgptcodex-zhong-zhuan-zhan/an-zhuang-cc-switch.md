@@ -20,7 +20,7 @@ CC Switch 是免费、开源的软件。请只从以下官方渠道下载：
 
 如果电脑系统低于上述要求，应先升级系统；不要从不明网站下载所谓的“兼容修改版”。
 
-## Windows安装
+## Windows安装 <a href="#windows" id="windows"></a>
 
 ### 第一步：确认电脑架构
 
@@ -78,7 +78,7 @@ Windows ARM64设备选择文件名中明确带有 `arm64` 的对应安装包。
 
 此时如果界面提示没有检测到Codex，也不代表CC Switch安装失败，只说明Codex运行环境尚未安装，继续阅读后续教程即可。
 
-## macOS安装
+## macOS安装 <a href="#macos" id="macos"></a>
 
 ### 第一步：下载安装包
 
@@ -131,7 +131,7 @@ brew install --cask cc-switch
 
 完成安装后，关闭无关窗口，保留CC Switch即可。个人线路将在后续步骤中导入。
 
-## 常见问题
+## 常见问题 <a href="#troubleshooting" id="troubleshooting"></a>
 
 ### 下载页面有很多文件，应该选哪个？
 
@@ -155,7 +155,7 @@ CC Switch和Codex是两个不同的软件。安装CC Switch只完成了配置工
 
 可以发送安装报错、系统版本和软件界面截图，但必须遮住API Key、Token和其他个人密钥。不要直接发送CC Switch数据库、导出备份或完整配置文件。
 
-## 本页完成标准
+## 本页完成标准 <a href="#verify" id="verify"></a>
 
 完成本页后，只需要确认：
 
@@ -170,3 +170,5 @@ CC Switch和Codex是两个不同的软件。安装CC Switch只完成了配置工
 
 * [CC Switch官方安装指南](https://github.com/farion1231/cc-switch/blob/main/docs/user-manual/zh/1-getting-started/1.2-installation.md)
 * [CC Switch官方发布页面](https://github.com/farion1231/cc-switch/releases)
+
+**下一步：**返回[安装与开通](an-zhuang-yu-kai-tong.md)，按自己的账号和线路状态继续配置。

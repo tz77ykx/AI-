@@ -1,0 +1,18 @@
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
+
+redirects:
+  chatgptcodex-zhong-zhuan-zhan/cc-switch-shi-shen-me-you-shen-me-yong: chatgptcodex-zhong-zhuan-zhan/cc-switch-shi-shen-me-you-shen-me-yong.md
+  chatgptcodex-zhong-zhuan-zhan/an-zhuang-cc-switch: chatgptcodex-zhong-zhuan-zhan/an-zhuang-cc-switch.md
+  chatgptcodex-zhong-zhuan-zhan/aidut-zhong-zhuan-yu-cc-switch-pei-zhi: chatgptcodex-zhong-zhuan-zhan/aidut-zhong-zhuan-yu-cc-switch-pei-zhi.md
+  chatgptcodex-zhong-zhuan-zhan/cc-switch-zeng-qiang-gong-neng: chatgptcodex-zhong-zhuan-zhan/cc-switch-zeng-qiang-gong-neng.md
+  chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/codex-zhuo-mian-duan-mu-biao-mo-shi-rang-chang-ren-wu-chi-xu-tui-jin: chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/codex-zhuo-mian-duan-mu-biao-mo-shi-rang-chang-ren-wu-chi-xu-tui-jin.md
+  chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/ba-github-jiao-gei-chatgpt-zhuo-mian-duan-codex: chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/ba-github-jiao-gei-chatgpt-zhuo-mian-duan-codex.md
+  chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/chatgpt-wang-ye-ban-+-gpt5.6-pro-yong-github-cang-ku-zuo-yuan-duan-kai-fa: chatgptcodex-zhong-zhuan-zhan/ru-men-jiao-cheng/chatgpt-wang-ye-ban-+-gpt5.6-pro-yong-github-cang-ku-zuo-yuan-duan-kai-fa.md
+  chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa: chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/README.md
+  chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/xian-xie-design.md-zai-xie-ye-mian-fei-she-ji-bei-jing-de-codex-qian-duan-gong-zuo-liu: chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/xian-xie-design.md-zai-xie-ye-mian-fei-she-ji-bei-jing-de-codex-qian-duan-gong-zuo-liu.md
+  chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/kan-dong-yi-ge-wang-ye-htmlcssjavascript-he-ye-mian-zu-cheng: chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/kan-dong-yi-ge-wang-ye-htmlcssjavascript-he-ye-mian-zu-cheng.md
+  chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/wang-ye-shi-jue-ci-dian-bu-ju-ye-mian-jie-gou-dao-hang-yu-chang-yong-zu-jian: chatgptcodex-zhong-zhuan-zhan/qian-duan-yu-wang-zhan-kai-fa/wang-ye-shi-jue-ci-dian-bu-ju-ye-mian-jie-gou-dao-hang-yu-chang-yong-zu-jian.md
